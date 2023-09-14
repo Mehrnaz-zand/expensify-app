@@ -20,9 +20,7 @@ export class EditExpensePage extends React.Component {
                     expense={this.props.expense}
                     onSubmit={this.onSubmit}
                 />
-                <button 
-                    onClick={this.onRemove}
-                >
+                <button onClick={this.onRemove}>
                     Remove
                 </button>
             </div>  
@@ -35,8 +33,8 @@ const mapStateToProps = (state, props) => ({
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
-    editExpense: () => dispatch(editExpense(id, expense)),
-    removeExpense: () => dispatch(removeExpense(data))
+    editExpense: (id, expense) => dispatch(editExpense(id, expense)),
+    removeExpense: (data) => dispatch(removeExpense(data))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditExpensePage);
